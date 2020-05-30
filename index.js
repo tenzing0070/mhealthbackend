@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const userRouter = require('./routes/users');
+const feedbackRouter = require('./routes/feedbacks');
 
 const uploadRouter = require('./routes/upload');
 
@@ -30,7 +31,7 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     app.use('/users', userRouter);
     //app.use(auth.verifyUser);
 
-   
+    app.use('/feedbacks',feedbackRouter);
     app.use('/upload', uploadRouter);
     
 
