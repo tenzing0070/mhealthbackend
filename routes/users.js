@@ -19,6 +19,9 @@ router.post('/signup', (req, res, next) => {
             phone:req.body.phone,
             email:req.body.email,
             gender:req.body.gender,
+            weight:req.body.weight,
+            height:req.body.height,
+            bloodgroup:req.body.bloodgroup,
             image:req.body.image,
             username: req.body.username,
             password: hash
@@ -85,6 +88,9 @@ router.get('/me', auth.verifyUser, (req, res, next) => {
         phone: req.user.phone,
         email: req.user.email,
         gender:req.user.gender,
+        weight:req.user.weight,
+        height:req.user.height,
+        bloodgroup:req.user.bloodgroup,
         username:req.user.username,
         password:req.user.password,
         image:req.user.image

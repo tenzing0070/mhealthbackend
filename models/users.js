@@ -39,6 +39,21 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
+    weight: {
+        type:Number,
+        required: true
+    },
+
+    height: {
+        type:Number,
+        required: true
+    },
+
+    bloodgroup: {
+        type:String,
+        required: true
+    },
+
     username: {
         type:String,
         required: true,
