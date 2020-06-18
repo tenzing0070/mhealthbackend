@@ -4,7 +4,7 @@ const firstaidSchema = new mongoose.Schema({
 
    
     codename: {
-        type:Number,
+        type:String,
         required:true
     },
     instruction: {

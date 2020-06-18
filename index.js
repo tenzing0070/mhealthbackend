@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const userRouter = require('./routes/users');
+const doctorRouter = require('./routes/doctors');
 const firstaidRouter = require('./routes/firstaids');
 const feedbackRouter = require('./routes/feedbacks');
 const uploadRouter = require('./routes/upload');
@@ -28,8 +29,10 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     }, (err) => console.log(err));
 
     app.use('/users', userRouter);
-    //app.use(auth.verifyUser);
+    app.use('/doctors', doctorRouter);
     app.use('/firstaids', firstaidRouter);
+    //app.use(auth.verifyUser);
+    
     app.use('/feedbacks',feedbackRouter);
     app.use('/upload', uploadRouter);
     
