@@ -13,7 +13,7 @@ router.post('/booking', auth.verifyUser,(req, res, next) => {
         purpose: req.body.purpose,
         date: req.body.date,
         time: req.body.time,
-        hours: req.body.hours,
+        // hours: req.body.hours,
         }).then((booking) => {
             res.json(booking);
         }).catch(next);
