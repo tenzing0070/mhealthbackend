@@ -22,10 +22,7 @@ const bookingdetailsSchema = new mongoose.Schema({
         type:String,
         required:true
     }
-    // hours:{
-    //     type:String,
-    //     required:true
-    // }
+
 });
 
 module.exports = mongoose.model('Bookingdetails', bookingdetailsSchema);

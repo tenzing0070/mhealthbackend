@@ -7,6 +7,7 @@ const firstaidRouter = require('./routes/firstaids');
 const feedbackRouter = require('./routes/feedbacks');
 const uploadRouter = require('./routes/upload');
 const bookingdetailsRouter = require('./routes/bookingdetails');
+const forgotpasswordsRouter = require('./routes/forgotpasswords');
 const cors = require('cors');
 const dotenv = require('dotenv').config();
 
@@ -32,11 +33,12 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     app.use('/users', userRouter);
     app.use('/doctors', doctorRouter);
     app.use('/firstaids', firstaidRouter);
-    //app.use(auth.verifyUser);
+    app.use(auth.verifyUser);
     
     app.use('/feedbacks',feedbackRouter);
     app.use('/upload', uploadRouter);
     app.use('/bookingdetails', bookingdetailsRouter);
+    app.use('/forgotpasswords', forgotpasswordsRouter);
     
 
 
