@@ -36,7 +36,7 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     app.use('/firstaids', firstaidRouter);
     
   
-    //app.use(auth.verifyUser);
+      app.use(auth.verifyUser);
     
     app.use('/feedbacks',feedbackRouter);
     app.use('/upload', uploadRouter);
