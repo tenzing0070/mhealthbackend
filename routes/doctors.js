@@ -1,10 +1,18 @@
 const express = require('express');
 const Doctor = require('../models/doctors');
 const router = express.Router();
+const auth = require('../auth');
+
 
 router.route('/postDoctor')
 .post((req,res,next) => {
     let doctor = new Doctor(req.body);
+    doctor.firstname = req.body.firstname,
+    doctor.lastname = req.body.lastname,
+    doctor.specialist = req.body.specialist,
+    doctor.image= req.body.image,
+    doctor.gender = req.body.gender,
+    doctor.price = req.body.price,
     doctor.save()
     .then((doctor) => {
         res.statusCode = 201;

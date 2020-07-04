@@ -2,6 +2,7 @@ const express = require('express');
 const Faq = require('../models/faqs');
 const router = express.Router();
 
+
 router.route('/postFaq')
 .post((req,res,next) => {
     let faq = new Faq(req.body);
