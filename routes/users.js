@@ -64,7 +64,7 @@ router.post('/adminLogin', (req, res, next) => {
                 err.status = 401;
                 return next(err);
             } else {
-                bcrypt.compare(req.body.password, user.password)
+                bcrypt.compandaare(req.body.password, user.password)
                     .then((isMatch) => {
                         if (!isMatch) {
                             let err = new Error('Password does not match!');
@@ -101,6 +101,7 @@ router.put('/me', auth.verifyUser, (req, res, next) => {
         res.json(req.body);
         }).catch(next);
 });
+
 router.route('/userdetails')
 .get((req,res,next) => {
     User.find({})
