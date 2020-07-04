@@ -47,7 +47,7 @@ router.route('/postDoctor')
     })
     
 
-    router.route('/doctordetails/:id')
+    router.route('/delete/:id')
     .delete((req, res, next) => {
         Doctor.findByIdAndDelete(req.params.id)
         .then((doctors)=>{
