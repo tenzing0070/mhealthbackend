@@ -1,10 +1,15 @@
 const express = require('express');
 const Firstaid = require('../models/firstaids');
 const router = express.Router();
+const auth = require('../auth');
 
 router.route('/postFirstaid')
 .post((req,res,next) => {
     let firstaid = new Firstaid(req.body);
+    firstaid.codename = req.body.codename,
+    firstaid.instruction = req.body.instruction,
+    firstaid.description = req.body.description,
+    firstaid.image= req.body.image,
     firstaid.save()
     .then((firstaid) => {
         res.statusCode = 201;
@@ -39,7 +44,7 @@ router.route('/postFirstaid')
     })
     
 
-    router.route('/firstaiddetails/:id')
+    router.route('/deleteFirstaid/:id')
     .delete((req, res, next) => {
         Firstaid.findByIdAndDelete(req.params.id)
         .then((firstaids)=>{
