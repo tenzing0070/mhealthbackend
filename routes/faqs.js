@@ -1,11 +1,14 @@
 const express = require('express');
 const Faq = require('../models/faqs');
 const router = express.Router();
+const auth = require('../auth');
 
 
 router.route('/postFaq')
 .post((req,res,next) => {
     let faq = new Faq(req.body);
+    faq.question = req.body.question,
+    faq.answer = req.body.answer,
     faq.save()
     .then((faq) => {
         res.statusCode = 201;
@@ -40,7 +43,7 @@ router.route('/postFaq')
     })
     
 
-    router.route('/faqdetails/:id')
+    router.route('/deleteFaq/:id')
     .delete((req, res, next) => {
         Faq.findByIdAndDelete(req.params.id)
         .then((faqs)=>{

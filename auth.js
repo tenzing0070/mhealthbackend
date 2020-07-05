@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('./models/users');
-// const Doctor = require('./models/doctors');
+
 module.exports.verifyUser = (req, res, next) => {
     let authHeader = req.headers.authorization;
     if (!authHeader) {

@@ -34,7 +34,7 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     app.use('/users', userRouter);
     app.use('/doctors', doctorRouter);
     app.use('/firstaids', firstaidRouter);
-    
+    app.use('/faqs', faqRouter);
   
       app.use(auth.verifyUser);
     
@@ -42,7 +42,7 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     app.use('/upload', uploadRouter);
     app.use('/bookingdetails', bookingdetailsRouter);
     app.use('/passwords', passwordRouter);
-    app.use('/faqs', faqRouter);
+    
 
 
     
