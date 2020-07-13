@@ -109,6 +109,15 @@ router.route('/userdetails')
         res.json(users);
     }).catch((err) => next(err));
 });
+
+router.route('/deleteUser/:id')
+.delete((req, res, next) => {
+    User.findByIdAndDelete(req.params.id)
+    .then((users)=>{
+        res.json(users);
+    })
+    .catch((err)=> next(err));
+});
 module.exports = router;
 
 

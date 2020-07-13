@@ -29,13 +29,13 @@ router.route('/myBookings')
     }).catch((err) => next(err));
 });
 
-// router.route('/id')
-// .delete((req,res,next) => {
-//     Bookingdetails.findByIdAndDelete(req.params.id)
-//     .then((booking) => {
-//         res.json(booking);
-//     }).catch((err) => next(err));
-// });
+router.route('/deleteBooking/id')
+.delete((req,res,next) => {
+    Bookingdetails.findByIdAndDelete(req.params.id)
+    .then((booking) => {
+        res.json(booking);
+    }).catch((err) => next(err));
+});
 
 
 module.exports = router;

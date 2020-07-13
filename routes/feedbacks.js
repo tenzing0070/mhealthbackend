@@ -42,7 +42,7 @@ router.route('/feedbackdetails')
     })
     
 
-    router.route('/feedbackdetails/:id')
+    router.route('/deleteFeedback/:id')
     .delete((req, res, next) => {
         Feedback.findByIdAndDelete(req.params.id)
         .then((feedbacks)=>{
