@@ -35,11 +35,12 @@ mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: tr
     app.use('/doctors', doctorRouter);
     app.use('/firstaids', firstaidRouter);
     app.use('/faqs', faqRouter);
-  
-      app.use(auth.verifyUser);
-    
     app.use('/feedbacks',feedbackRouter);
     app.use('/upload', uploadRouter);
+    app.use(auth.verifyUser);
+    
+
+  
     app.use('/bookingdetails', bookingdetailsRouter);
     app.use('/passwords', passwordRouter);
     
